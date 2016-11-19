@@ -3,7 +3,7 @@ package jsonconfig
 import (
 	"encoding/json"
 	"io/ioutil"
-	"strings"
+	"os"
 	"time"
 )
 
@@ -28,7 +28,7 @@ func InitConf(confFile string) (err error) {
 	// read the whole file at once
 	confStr, err := ioutil.ReadFile(confFile)
 	if err != nil {
-		if strings.Contains(err.Error(), "no such file or directory") {
+		if os.IsNotExist(err) {
 			return createEmptyConfig()
 		}
 
