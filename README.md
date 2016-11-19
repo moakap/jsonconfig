@@ -37,5 +37,7 @@ func main() {
 ```
 output
 > param1 =  100
+
 > param2 =  stringValue
+
 > param3 =  2016-11-19 15:34:32.19989814 +0800 CST
